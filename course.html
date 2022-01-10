@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #card{
+            width: 14rem;
+            height: 18rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+   
+    <form id="form">
+       <input id="CourseName" type="text" placeholder="Add Course"/>
+       <input id="CourseDetails" type="text" placeholder="Add details"/>
+<input type="submit">
+    </form>
+<div id="card">
+<button id="1">details</button>
+<button id="2">apply</button>
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", course);
+    function course(event){
+        event.preventDefault();
+        var title = document.querySelector("#CourseName").value;
+        var detail = document.querySelector("#CourseDetails").value;
+        var div = document.createElement("div");
+        var title1 = document.createElement("h1");
+        title1.textContent = title;
+        var footer1 = document.createElement("p");
+        footer1.textContent = detail;
+        div.append(title1,footer1);
+        document.querySelector("div").append(div)
+        }
+</script>
